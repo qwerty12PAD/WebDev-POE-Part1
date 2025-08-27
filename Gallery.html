@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+        <head>
+        <meta charset="utf-8">
+        <html lang =" en">
+        <meta http-equiv = "X-UA-Cmpatible" content="IE=edge">
+        <meta name = "viewport" content  = "width=device-width, initial - scale = 1.0">
+        <title>Gallery</title><!----page title appearing on the browser-->
+        <style>
+                .row > .column{
+                        padding: 0 8 px;
+                }
+                .row:after{
+                        content: "";
+                        display: table;
+                        clear: both;
+                }
+                .column{
+                        float: left;
+                        width: 25%;
+                }
+                .modal{
+                        display: none;
+                        position: fixed;
+                        z-index: 1;
+                        padding-top: 100px;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        overflow: auto;
+                        background-color: grey;
+                }
+                .modal-content{
+                        position: relative;
+                        background-color: #fefefe;
+                        margin: auto;
+                        padding: 0;
+                        width: 90%;
+                        max-width: 1200px;
+                }
+                .close{
+                        color: black;
+                        position: absolute;
+                        top: 10px;
+                        right: 25px;
+                        font-size: 35px;
+                        font-weight: bold;
+                }
+                .close:hover, .close:focus{
+                  color: #999;
+                  text-decoration: none;
+                  cursor: pointer;      
+                }
+                .myslides{
+                        display: none;
+                }
+                .prev, .next{
+                        cursor: pointer;
+                        position: absolute;
+                        top:50%;
+                        width: auto;
+                        padding: 16px;
+                        margin-top: -50px;
+                        color: white;
+                        font-weight: bold;
+                        font-size: 20px;
+                        transition: 0.6s ease;
+                        border-radius: 0 3px 3px 0;
+                        -webkit-user-select: none;
+                        user-select: none;
+                }
+                .next{
+                        right: 0;
+                        border-radius: 3px 0 0 3px;
+                }
+                .prev:hover, .next:hover{
+                        background-color: #999;
+                }
+                .numbertext{
+                        color:black;
+                        font-size: 8px 12px;
+                        position: absolute;
+                        top: 0;
+                }
+                .caption-container{
+                        text-align: center;
+                        background-color: #999;
+                        padding: 2px 6px;
+                        color: black;
+                }
+                img.hover-shadow{
+                        transition: 0.3s;
+                }
+                .hover-shadow:hover{
+                        box-shadow: 0 4px 8px;
+                }
+                .column{
+                        max-width: 90%;
+                        max-height: 80vh;
+                }
+        </style>
+        </head>
+        <body>
+
+                <nav>
+                        <input title="checkbox" type="checkbox" id = "check">
+                        <label for = "check" class="checkbtn">
+                            <i class="fas fa-bars"></i>
+                        </label>
+                        <img src="images/Vertigo.png" alt="Vertigo photography logo image">
+                        <ul >
+                            <li><a class = "active" href="Homepage.html">Homapage</a></li>
+                            <li><a  href="Enquiry.html"> Enquiry</a></li>
+                            <li><a href="Gallery.html">Gallery</a></li>
+                            <li><a href="AboutUs.html">About Us</a></li>
+                            <li><a href="Contact Us.html">Contact Us</a></li>
+                        </ul>
+                       
+                    </nav>
+                    <h1>Gallery</h1>
+             <p>Here lies our gallery, our home for our takes on captured love and commitment</p>
+             <!--image grid with images that open the lightbox when clicked-->
+             <div class="row"><!--(w3schools)-->
+                <div class="column">
+                  <img src="images/bride and bridesmaids.jpg" alt="bridesmaids image" onclick="openModal();currentSlide(1)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride and groom1.jpg" alt="bride an d groom" onclick="openModal();currentSlide(2)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride and groom2.jpg" alt="bridea and groom" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride and groom3.jpg" alt="bride and groom" onclick="openModal();currentSlide(4)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride and groom5.jpg" alt="bride and groom" onclick="openModal();currentSlide(5)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride and groom6.jpg" alt="brid ena groom" onclick="openModal();currentSlide(6)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride and groom7.jpg" alt="brid eand groom" onclick="openModal();currentSlide(7)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride and groom8.jpg" alt="bride and groom" onclick="openModal();currentSlide(8)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride and groom9.jpg" alt="bride and groom" onclick="openModal();currentSlide(9)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride1.jpg" alt="bride image" onclick="openModal();currentSlide(10)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride2.jpg" alt="bride image" onclick="openModal();currentSlide(11)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride3.jpg" alt="bride image" onclick="openModal();currentSlide(12)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bride4.jpg" alt="bride image" onclick="openModal();currentSlide(13)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/bridesmaids1.jpg" alt="bridesmaids image" onclick="openModal();currentSlide(14)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/couple playing a wedding game1.jpg" alt="bride and groom" onclick="openModal();currentSlide(15)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/couple playing a wedding game2.jpg" alt="wedding games" onclick="openModal();currentSlide(16)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/groom and bestman1.jpg" alt="groom and bestmen" onclick="openModal();currentSlide(17)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/group wedding picture1.jpg" alt="group image" onclick="openModal();currentSlide(18)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/married couple1.jpg" alt="married couple" onclick="openModal();currentSlide(19)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/pexels-stewphotography-6645212.jpg" alt="bride and groom" onclick="openModal();currentSlide(20)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/pexels-yakup-polat-420882786-18844199.jpg" alt="bride and groom" onclick="openModal();currentSlide(21)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/wedding group picture2.jpg" alt="group image" onclick="openModal();currentSlide(22)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/wedding location 1.jpg" alt="weddiing venue" onclick="openModal();currentSlide(23)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/wedding location2.jpg" alt="weddiing venue" onclick="openModal();currentSlide(24)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/wedding location3.jpg" alt="wedding venue" onclick="openModal();currentSlide(25)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/wedding location4.jpg" alt="weddiing venue" onclick="openModal();currentSlide(26)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/wedding location5.jpg" alt="weddiing venue" onclick="openModal();currentSlide(27)" class="hover-shadow">
+                </div>
+                <div class="column">
+                  <img src="images/wedding location6.jpg" alt="weddiingvenue" onclick="openModal();currentSlide(28)" class="hover-shadow">
+                </div>
+              </div>
+              <!--lightbox-->
+              <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+              
+                  <div class="mySlides">
+                    <div class="numbertext">1 / 28</div>
+                    <img src="images/bride and bridesmaids.jpg" alt="bridesmaids image" >
+                  </div>
+              
+                  <div class="mySlides">
+                    <div class="numbertext">2 / 28</div>
+                    <img src="images/bride and groom1.jpg" alt="bride and groom" >
+                  </div>
+              
+                  <div class="mySlides">
+                    <div class="numbertext">3 / 28</div>
+                    <img src="images/bride and groom2.jpg" alt="brie and groom">
+                  </div>
+              
+                  <div class="mySlides">
+                    <div class="numbertext">4 / 28/div>
+                    <img src="images/bride and groom3.jpg" alt="bride and groom" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">5 / 28</div>
+                    <img src="images/bride and groom5.jpg" alt="bride and groom" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">6 / 28</div>
+                    <img src="images/bride and groom6.jpg" alt="broie and groom" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">7 / 28</div>
+                    <img src="images/bride and groom7.jpg" alt="briode and groom" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">8 / 28</div>
+                    <img src="images/bride and groom8.jpg" alt="brie and grooom" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">9 / 28</div>
+                    <img src="images/bride and groom9.jpg" alt="bride and groom" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">10 / 28</div>
+                    <img src="images/bride1.jpg" alt="bride image">
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">11 / 28</div>
+                    <img src="images/bride2.jpg" alt="bride image" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">12 / 28</div>
+                    <img src="images/bride3.jpg" alt="bride image">
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">13 / 28</div>
+                    <img src="images/bride4.jpg" alt="bride image" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">14 / 28</div>
+                    <img src="images/bridesmaids1.jpg" alt="bridesmaids image" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">15 / 28</div>
+                    <img src="images/couple playing a wedding game1.jpg" alt="wedding game" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">16 / 28</div>
+                    <img src="images/couple playing a wedding game2.jpg" alt="wedding game" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">17 / 28</div>
+                    <img src="images/groom and bestman1.jpg" alt="groom and bestmen image">
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">18 / 28</div>
+                    <img src="images/group wedding picture1.jpg" alt="group image" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">19 / 28</div>
+                    <img src="images/married couple1.jpg" alt="married couple">
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">20 / 28</div>
+                    <img src="images/pexels-stewphotography-6645212.jpg" alt="bride and groom">
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">21 / 28</div>
+                    <img src="images/pexels-yakup-polat-420882786-18844199.jpg" alt="bride and groom" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">22 / 28</div>
+                    <img src="images/wedding group picture2.jpg" alt="group image">
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">23 / 28</div>
+                    <img src="images/wedding location 1.jpg" alt="weddiing venue">
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">24 / 28</div>
+                    <img src="images/wedding location2.jpg" alt="weddiing venue">
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">25 / 28</div>
+                    <img src="images/wedding location3.jpg" alt="weddiing venue" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">26 / 28</div>
+                    <img src="images/wedding location4.jpg" alt="weddiing venue" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">26 / 28</div>
+                    <img src="images/wedding location5.jpg" alt="weddiing venue" >
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">27 / 27</div>
+                    <img src="images/wedding location6.jpg" alt="weddiing venue" >
+                  </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <!--lightbox javascript logc-->
+                <script>
+                        //open the modal
+                        function openMedal(){
+                                document.getElementById("myModal").style.display = "block";
+                        }
+                        //close modal
+                        function closeModal(){
+                                document.getElementById("myModal").style.display = "none";
+                        }
+
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+                        //next and prevous btn controls
+                        function plusSlides(n){
+                                showSlides(slideIndex += n);
+                        }
+                        function showSlides(n){
+                                var i;
+                                var slides = document.getElementById("mySlide");
+                                var captionText = document.getElementById("Caption");
+                                if(n > slide.length) {slideIndex = 1}
+                                if (n < 1) {slideIndex = slids.length}
+                                for (i = 0; i < slides.length; 1++){
+                                        slides[i].style.display = "none";
+                                }
+                        }
+                </script>
+             <!--the following code was taken from https://www.w3schools.com/howto/howto_css_next_prev.asp-->
+             <a href="#" class="previous">&laquo; Previous</a>
+             
+             <button onclick="topFunction()" id="backtotopbtn" title="Go to top">Top</button>
+        
+             <script>
+             // Get the button
+             let backtotopbtn = document.getElementById("backtotopbtn");
+     
+             // When the user scrolls down 20px from the top of the document, show the button
+             window.onscroll = function() {scrollFunction()};
+             //function dictating how far the user scrolls down befor the back to top button appears
+             function scrollFunction() {
+                     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) 
+                     {
+                              mybutton.style.display = "block";
+                     } 
+                     else 
+                     {
+                             mybutton.style.display = "none";
+                      }
+                     }
+     
+             // When the user clicks on the button, scroll to the top of the document
+             function topFunction()
+             {
+                     document.body.scrollTop = 0;
+                     document.documentElement.scrollTop = 0;
+             }
+             </script>
+        <button onclick="history.back()">Go Back</button>
+
+             
+        
+        <hr>
+        <footer><i><b>Mbuyiseli Mancayi St10085188</b></i></footer>
+        </body>
+</html>
+<!--
+References:
+w3schools (no date) W3schools.com, HTML select multiple Attribute. Available at: https://www.w3schools.com/tags/att_select_multiple.asp (Accessed: 25 October 2024). 
+-->

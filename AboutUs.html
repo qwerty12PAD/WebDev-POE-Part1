@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+        <head>
+        <meta charset="utf-8">
+        <html lang -=" eng">
+        <meta http-equiv = "X-UA-Cmpatible" content="IE=edge">
+        <meta name = "viewport" content  = "width=device-width,  initial - scale = 1.0">
+        <title>About Us</title><!----page title appearing on the browser-->
+        </head>
+        <body>
+                <nav>
+                        <input title = "checkbox"type="checkbox" id = "check">
+                        <label for = "check" class="checkbtn">
+                            <i class="fas fa-bars"></i>
+                        </label>
+                        <img src="images/Vertigo.png" alt="Vertigo photography logo image">
+                        <ul >
+                            <li><a class = "active" href="Homepage.html">Homapage</a></li>
+                            <li><a  href="Enquiry.html">Enquiry</a></li>
+                            <li><a href="Gallery.html">Gallery</a></li>
+                            <li><a href="AboutUs.html">About Us</a></li>
+                            <li><a href="Contact Us.html">Contact Us</a></li>
+                        </ul>
+                       
+                    </nav>
+             <img src="images/photographer 1.png" width="200" height="250" alt="An image of the founder of Vertigo."/><br>
+             <p>Vertigo photography conceaved as a hobby in 2018, quickly greww past expectations just a year later as it
+                 became a profitable business with a steady client base. This fast progress is only bolstered by the quality
+                 in the manner with which services are provided. 'Capturing your favourite moments in time'; the aim that vertigo
+                 to this day strives achieve for each and every client and as evidenced by their client satisfaction, vertigo reaches
+                 that standard every time.<br>
+             Gqeberha Based Wedding & Family Photographer<br><br>Currently booking for 2024 & 2025<br> <a href = "html_contact us.asp" target="_blank">Contact Us</a></p><br><!--edit the font and font -size of this text-->
+
+             <button onclick="topFunction()" id="backtotopbtn" title="Go to top">Top</button>
+        
+             <script>
+             // Get the button
+             let backtotopbtn = document.getElementById("backtotopbtn");
+     
+             // When the user scrolls down 20px from the top of the document, show the button
+             window.onscroll = function() {scrollFunction()};
+             //function dictating how far the user scrolls down befor the back to top button appears
+             function scrollFunction() {
+                     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) 
+                     {
+                              mybutton.style.display = "block";
+                     } 
+                     else 
+                     {
+                             mybutton.style.display = "none";
+                      }
+                     }
+     
+             // When the user clicks on the button, scroll to the top of the document
+             function topFunction()
+             {
+                     document.body.scrollTop = 0;
+                     document.documentElement.scrollTop = 0;
+             }
+             </script>
+     
+        <button onclick="history.back()">Go Back</button>
+        
+        <hr>
+        <footer><i><b>Mbuyiseli Mancayi St10085188</b></i></footer>
+        </body>
+</html>
